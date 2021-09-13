@@ -4,7 +4,7 @@ import $ from 'jquery';
 import _ from 'lodash';
 
 const songlist = require("../songlist.json");
-let currTag = 'all';
+let currFilter = 'all';
 
 const ap = new APlayer({
     container: document.getElementById('aplayer'),
@@ -12,10 +12,10 @@ const ap = new APlayer({
 });
 
 function onSelectTag(tagName) {
-    $(`#${currTag}`).removeClass("active");
+    $(`#${currFilter}`).removeClass("active");
     $(`#${tagName}`).addClass("active");
     $('#listTitle').text(tagName);
-    currTag = tagName;
+    currFilter = tagName;
 }
 
 const [tagFilters, artistFilter] = songlist.reduce((acc, curr) => {
@@ -34,8 +34,8 @@ const [tagFilters, artistFilter] = songlist.reduce((acc, curr) => {
     return acc;
 }, [[], []]);
 
-tagFilters.forEach(tag => {
-    $("#tagFilterRow").append(`<button class="btn btn-outline-primary btn-sm" type="button" id="${tag}">${tag}</button>`);
+tagFilters.forEach((tag, index) => {
+    $("#tagFilterRow").append(`<button class="btn btn-outline-primary btn-sm ${index > 0 ? 'ms-1' : ''}" type="button" id="${tag}">${tag}</button>`);
     $(`#${tag}`).on('click', () => {
         onSelectTag(tag);
         const newSongList = songlist.filter(song => {
@@ -48,7 +48,7 @@ tagFilters.forEach(tag => {
 });
 
 artistFilter.forEach((artist, index) => {
-    $("#artistFilterRow").append(`<button class="btn btn-outline-primary btn-sm ${index > 0 ? 'm-1' : ''}" type="button" id="${artist}">${artist}</button>`);
+    $("#artistFilterRow").append(`<button class="btn btn-outline-primary btn-sm ${index > 0 ? 'ms-1' : ''}" type="button" id="${artist}">${artist}</button>`);
     $(`#${artist}`).on("click", () => {
         onSelectTag(artist);
         const newSongList = songlist.filter(song => {
@@ -61,7 +61,7 @@ artistFilter.forEach((artist, index) => {
 });
 
 $("#all").on('click', () => {
-    onSelectTag("All");
+    onSelectTag("all");
     ap.list.clear();
     ap.list.add(songlist);
 });
