@@ -20,21 +20,24 @@
         "artist":"YOASOBI",
         "url":"music/ハルジオン.mp3",
         "cover":"",
-        "album":""
+        "album":"",
+        "tags":[]
     },
     {
         "name": "ラブレター",
         "artist":"YOASOBI",
         "url":"music/ラブレター.mp3",
         "cover":"",
-        "album":""
+        "album":"",
+        "tags":[]
     },
     {
         "name": "怪物",
         "artist":"YOASOBI",
         "url":"music/怪物.mp3",
         "cover":"",
-        "album":""
+        "album":"",
+        "tags":[]
     },
     {
         "name": "踊",

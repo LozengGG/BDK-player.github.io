@@ -1,1 +1,8 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/aplayer/dist/APlayer.min.css";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+.bi-filter-left {
+    font-size: 40px;
+    font-weight: bold;
+}

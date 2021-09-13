@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css" integrity="sha512-CIYsJUa3pr1eoXlZFroEI0mq0UIMUqNouNinjpCkSWo3Bx5NRlQ0OuC6DtEB/bDqUWnzXc1gs2X/g52l36N5iw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>BDK Player</title>
     <link rel="stylesheet" href="./assets/style.css" />
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <h1 class="h1">Kai's Player</h1>
+        <div class="d-flex align-items-center pt-3">
+            <h2 class="fs-2">BDK Player</h2>
+            <a class="link-primary ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse">
+                <i class="bi-filter-left text-secondary"></i>
+            </a>
         </div>
-        <div class="py-2" id="tagFilterRow">
-            <h5 class="h5">Tags</h5>
-            <button class="btn btn-outline-primary btn-sm active" type="button" id="all">All</button>
-        </div>
-        <div class="py-2" id="artistFilterRow">
-            <h5 class="h5">Artist</h5>
+        <div class="collapse show" id="filterCollapse">
+            <div class="py-2" id="tagFilterRow">
+                <h5 class="fs-6">Tags</h5>
+                <button class="btn btn-outline-primary btn-sm active" type="button" id="all">All</button>
+            </div>
+            <div class="py-2" id="artistFilterRow">
+                <h5 class="fs-6">Artist</h5>
+            </div>
         </div>
         <div class="row pt-4">
             <h2 class="h4" id="listTitle">All</h2>
