@@ -1,20 +1,67 @@
-//import '../node_modules/aplayer/dist/APlayer.min.css';
 import APlayer from '../node_modules/aplayer/dist/APlayer.min.js';
+import bootstrap from 'bootstrap';
+import $ from 'jquery';
+import _ from 'lodash';
+
+const songlist = require("../songlist.json");
+let currTag = 'all';
 
 const ap = new APlayer({
     container: document.getElementById('aplayer'),
-    audio: [
-        {
-            name: 'NEXT COLOR PLANET',
-            artist: 'Suisei',
-            url: 'music/NEXT COLOR PLANET.mp3',
-            cover: 'pic/NEXT COLOR PLANET.jpg'
-        },
-        {
-            name: 'GHOST',
-            artist: 'Suisei',
-            url: 'music/GHOST.mp3',
-            cover: 'pic/GHOST.jpg'
+    audio: songlist,
+});
+
+function onSelectTag(tagName) {
+    $(`#${currTag}`).removeClass("active");
+    $(`#${tagName}`).addClass("active");
+    $('#listTitle').text(tagName);
+    currTag = tagName;
+}
+
+const [tagFilters, artistFilter] = songlist.reduce((acc, curr) => {
+    if (curr.tags && curr.tags.length > 0) {
+        curr.tags.forEach(tag => {
+            if (!acc[0].includes(tag)) {
+                acc[0].push(tag);
+            }
+        });
+    }
+    if (curr.artist) {
+        if (!acc[1].includes(curr.artist)) {
+            acc[1].push(curr.artist)
         }
-]
+    }
+    return acc;
+}, [[], []]);
+
+tagFilters.forEach(tag => {
+    $("#tagFilterRow").append(`<button class="btn btn-outline-primary btn-sm" type="button" id="${tag}">${tag}</button>`);
+    $(`#${tag}`).on('click', () => {
+        onSelectTag(tag);
+        const newSongList = songlist.filter(song => {
+            if (!song.tags) return false;
+            return song.tags.includes(tag);
+        });
+        ap.list.clear();
+        ap.list.add(newSongList);
+    })
+});
+
+artistFilter.forEach((artist, index) => {
+    $("#artistFilterRow").append(`<button class="btn btn-outline-primary btn-sm ${index > 0 ? 'm-1' : ''}" type="button" id="${artist}">${artist}</button>`);
+    $(`#${artist}`).on("click", () => {
+        onSelectTag(artist);
+        const newSongList = songlist.filter(song => {
+            if (!song.artist) return false;
+            return song.artist.toLowerCase() === artist.toLowerCase();
+        });
+        ap.list.clear();
+        ap.list.add(newSongList);
+    });
+});
+
+$("#all").on('click', () => {
+    onSelectTag("All");
+    ap.list.clear();
+    ap.list.add(songlist);
 });

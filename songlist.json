@@ -1,0 +1,39 @@
+[
+    {
+        "name": "NEXT COLOR PLANET",
+        "artist":"Suisei",
+        "url":"music/NEXT COLOR PLANET.mp3",
+        "cover":"pic/NEXT COLOR PLANET.jpg",
+        "album":"",
+        "tags": ["hololive"]
+    },
+    {
+        "name": "GHOST",
+        "artist": "Suisei",
+        "url": "music/GHOST.mp3",
+        "cover": "pic/GHOST.jpg",
+        "album":"",
+        "tags": ["hololive"]
+    },
+    {
+        "name":"ハルジオン",
+        "artist":"YOASOBI",
+        "url":"music/ハルジオン.mp3",
+        "cover":"",
+        "album":""
+    },
+    {
+        "name": "ラブレター",
+        "artist":"YOASOBI",
+        "url":"music/ラブレター.mp3",
+        "cover":"",
+        "album":""
+    },
+    {
+        "name": "怪物",
+        "artist":"YOASOBI",
+        "url":"music/怪物.mp3",
+        "cover":"",
+        "album":""
+    }
+]
