@@ -15,6 +15,12 @@ const ap = new APlayer({
             artist: 'Suisei',
             url: 'music/GHOST.mp3',
             cover: 'pic/GHOST.jpg'
+        },
+        {
+            name: 'Suisei_BGM01',
+            artist: 'Suisei',
+            url: 'music/Suisei_BGM01.mp3',
+            cover: 'pic/Suisei_BGM01.jpg'
         }
 ]
 });
