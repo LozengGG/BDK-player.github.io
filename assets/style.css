@@ -2,16 +2,26 @@
 @import "../node_modules/aplayer/dist/APlayer.min.css";
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
+/* general */
+
 .bi-filter-left {
     font-size: 40px;
     font-weight: bold;
 }
+
+.text-hidden {
+    display: none;
+}
+
+/* Aplayer */
 
 .aplayer.aplayer-fixed {
     width: 100% !important;
     max-width: 100%;
     display: flex;
     justify-content: end;
+    z-index: 110;
+    background-color: transparent;
 }
 
 .aplayer.aplayer-fixed .aplayer-body {
@@ -21,8 +31,84 @@
 
 .aplayer-list {
     width: 80%;
+    background-color: white;
+    border-radius: .15rem;
 }
+
+/* nav */
 
 .side-nav {
     z-index: 100;
+    background-color: black;
+    height: 100vh;
+    /* min-height: 100vh; */
+}
+
+.nav-link {
+    padding: .35rem .5rem;
+    font-size: .9rem;
+    height: 100%;
+}
+
+.nav-link i {
+    padding-right: .5rem;
+    font-size: 1rem;
+}
+
+.nav-link.active {
+    background-color: #282828;
+    border-radius: .25rem;
+    color: white !important;
+}
+
+.nav-item {
+    height: 2.4rem;
+}
+
+.nav-header {
+    color: white;
+}
+
+/* content */
+
+.content {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1d3557+9,000000+42 */
+    background: #1d3557; /* Old browsers */
+    background: -moz-linear-gradient(top,  #1d3557 9%, #000000 42%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #1d3557 9%,#000000 42%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #1d3557 9%,#000000 42%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d3557', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+.content-hide {
+    visibility: hidden;
+}
+
+/* Search page */
+
+.content-search h2, h5 {
+    color: #cccccc;
+}
+
+.search-result {
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
+.search-result .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(179, 179, 179) !important;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.search-result .list-group-item i {
+    color: rgb(179, 179, 179) !important;
+}
+
+.search-result .search-list-item-name,
+.search-result .search-list-item-index {
+    color: #dddddd;
 }
