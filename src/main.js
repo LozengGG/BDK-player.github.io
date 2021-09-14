@@ -2,6 +2,7 @@ import APlayer from '../node_modules/aplayer/dist/APlayer.min.js';
 import bootstrap from 'bootstrap';
 import $ from 'jquery';
 import _ from 'lodash';
+import '../assets/style.css';
 
 const songlist = require("../songlist.json");
 const currFilter = [];
