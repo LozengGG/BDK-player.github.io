@@ -6,3 +6,23 @@
     font-size: 40px;
     font-weight: bold;
 }
+
+.aplayer.aplayer-fixed {
+    width: 100% !important;
+    max-width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.aplayer.aplayer-fixed .aplayer-body {
+    width: 100%;
+    max-width: 100%;
+}
+
+.aplayer-list {
+    width: 80%;
+}
+
+.side-nav {
+    z-index: 100;
+}

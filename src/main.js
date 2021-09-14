@@ -9,8 +9,11 @@ const currFilter = [];
 const ap = new APlayer({
     container: document.getElementById('aplayer'),
     audio: songlist,
-    listMaxHeight: 480,
+    listMaxHeight: "80vh",
+    fixed: true,
 });
+
+$("#aplayer").removeClass("aplayer-narrow");
 
 function onSelectFilter(selectedFilter) {
     if ($("#all").hasClass("active")) {
